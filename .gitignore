@@ -1,0 +1,7 @@
+/lab2/*
+
+!.gitignore
+
+!/lab2/src/
+!/lab2/src/*
+!/lab2/*.py
