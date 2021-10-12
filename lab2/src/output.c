@@ -81,7 +81,7 @@ output_results(Simulation_Run_Ptr simulation_run)
   printf("\n");
   printf("Random Seed = %d \n", data->random_seed);
   printf("Packet arrival count = %ld \n", data->arrival_count);
-
+  printf("Simulation length = %.2f (s) \n", simulation_run->clock->time/1000);
   xmtted_fraction = (double) data->number_of_packets_processed /
     data->arrival_count;
 

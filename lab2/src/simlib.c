@@ -447,6 +447,24 @@ fifoqueue_put(Fifoqueue_Ptr queue_ptr, void * content_ptr)
   queue_ptr->size++;
 }
 
+
+void*
+fifoqueue_put_front(Fifoqueue_Ptr queue_ptr, void* content_ptr)
+{
+    Queue_Container_Ptr queue_container_ptr;
+
+    queue_container_ptr = (Queue_Container_Ptr)xmalloc(sizeof(Queue_Container));
+    queue_container_ptr->content_ptr = content_ptr;
+    queue_container_ptr->next_ptr = queue_ptr->front_ptr;
+    queue_ptr->front_ptr = queue_container_ptr;
+
+    if (queue_ptr->size == 0) 
+        queue_ptr->back_ptr = queue_container_ptr;
+
+   
+    queue_ptr->size++;
+}
+
 /*
  * Take something out of a FIFO queue. Whatever it is should be cast to a void
  * pointer.
@@ -492,6 +510,8 @@ fifoqueue_see_front(Fifoqueue_Ptr queue_ptr)
 {
   return queue_ptr->front_ptr->content_ptr;
 }
+
+
 
 /*
  * Server functions.

@@ -251,18 +251,3 @@ main(void)
 }
 
 #endif
-
-#ifdef QUSETION5
-
-
-
-#endif // QUSETION5
-
-
-
-
-
-
-
-
-

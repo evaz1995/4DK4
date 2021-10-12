@@ -12,6 +12,7 @@ extern "C" {
 #include<fstream>
 #include<string>
 #include <iostream>
+#include <iomanip>  
 
 using namespace std;
 namespace utils {
@@ -41,8 +42,8 @@ namespace utils {
 		template <>
 		inline void fprint(Simulation_Run_Data_Ptr data)
 		{
-			OUT << (double)SWITCH_PROBILITY << "\t";
-			OUT << 1e3 * data->accumulated_delay / data->number_of_packets_processed << "\n";
+			OUT << std::fixed<< PACKET_ARRIVAL_RATE+0.00000001 << "\t";
+			OUT << std::fixed <<1e3 * data->accumulated_delay / ( data->arrival_count - data->number_of_packets_processed)<< "\n";
 		}
 	};
 	
@@ -56,7 +57,7 @@ namespace utils {
 		std::array<double, K> result{};
 		for (int i = 0; i < size; ++i)
 		{
-			result[i] = i * interval;
+			result[i] = (i+1) * interval;
 		}
 		return result;
 		}()

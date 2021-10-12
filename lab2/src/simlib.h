@@ -72,6 +72,7 @@ typedef struct _event_
   const char * description;
   void (* function)(struct _simulation_run_*, void *);
   void * attachment;
+  int eventtype;
 } Event, * Event_Ptr;
 
 typedef struct _event_container_
@@ -201,6 +202,9 @@ fifoqueue_new(void);
 
 void
 fifoqueue_put(Fifoqueue_Ptr, void*);
+
+void*
+fifoqueue_put_front(Fifoqueue_Ptr, void*);
 
 void *
 fifoqueue_get(Fifoqueue_Ptr);

@@ -45,22 +45,16 @@ typedef struct _simulation_run_data_
 } Simulation_Run_Data, * Simulation_Run_Data_Ptr;
 
 typedef enum {XMTTING, WAITING} Packet_Status;
-
+typedef enum { FIXEDTIME, RANDOM } Packet_Type;
 typedef struct _packet_ 
 {
   double arrive_time;
   double service_time;
   int source_id;
   int destination_id;
+  Packet_Type type;
   Packet_Status status;
 } Packet, * Packet_Ptr;
-
-/*
- * Function prototypes
- */
-
-int
-main(void);
 
 /******************************************************************************/
 

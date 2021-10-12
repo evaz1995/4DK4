@@ -44,7 +44,6 @@ schedule_end_packet_transmission_event(Simulation_Run_Ptr simulation_run,
 				       double event_time,
 				       Server_Ptr link)
 {
-	TRACEF(printf("ERROR: this function should not be called\n");)
   Event event;
 
   event.description = "Packet Xmt End";

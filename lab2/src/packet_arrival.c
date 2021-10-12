@@ -43,7 +43,6 @@ long int
 schedule_packet_arrival_event(Simulation_Run_Ptr simulation_run,
 			      double event_time)
 {
-	TRACEF(printf("ERROR: this function should not be called\n");)
   Event event;
 
   event.description = "Packet Arrival";
@@ -65,7 +64,6 @@ schedule_packet_arrival_event(Simulation_Run_Ptr simulation_run,
 static void
 packet_arrival_event(Simulation_Run_Ptr simulation_run, void * ptr)
 {
-	TRACEF(printf("ERROR: this function should not be called\n");)
   Simulation_Run_Data_Ptr data;
   Packet_Ptr new_packet;
 

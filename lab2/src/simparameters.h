@@ -35,7 +35,7 @@ extern double min_delay;
 extern double PACKET_ARRIVAL_RATE; /* packets per second */
 #define PACKET_LENGTH 1000 /* bits */
 #define LINK_BIT_RATE 5e5 /* bits per second */
-#define RUNLENGTH 1e5 /* packets */
+#define RUNLENGTH 1e3 /* packets */
 
 /* Comma separated list of random seeds to run. */
 #define RANDOM_SEED_LIST 400176017
